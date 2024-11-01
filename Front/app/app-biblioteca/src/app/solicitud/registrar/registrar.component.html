@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="formSolicitud">
+        <mat-form-field>
+            <mat-label>Selecciona un libro:</mat-label>
+            <select name="libroId" id="libroId" formControlName="libroId">
+                @for(libro of libros; track $index){
+                    <option [value]="libro.id">
+                        {{ libro.titulo }}
+                    </option>
+                }
+            </select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" style="display: block;" (click)="registrar()">Registrar</button>
+    </form>
+  </div>
+  
